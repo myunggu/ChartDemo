@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let progress: CGFloat = 0.5
+        let progressDegrees: CGFloat = ((progress * 100.0) * 360.0)/100.0
+        let radian = degreesToRadians(progressDegrees)
+        print(progressDegrees, radian)
     }
-
+    
+    func degreesToRadians(_ degree: CGFloat) -> CGFloat {
+        return degree * CGFloat.pi / 180.0
+    }
 
 }
 
